@@ -1,9 +1,8 @@
 const homeContainer = document.querySelector("#content");
-const outterContainer = document.querySelector("#outter-container");
 
 const createDescription = (text) => {
     const description = document.createElement("h2");
-    description.textContent = text;
+    description.innerHTML = text;
 
     return description;
 }
@@ -15,12 +14,12 @@ const createQuote = (text) => {
     return quote;
 }
 
-const createHomeDisplay = (descriptionText, quoteText) => {
-    const description = createDescription(descriptionText);
-    const quote = createQuote(quoteText);
+const createHomeDisplay = () => {
+    const description = createDescription("Take a well deserved break from coding and enjoy<br>our outstanding selection of cocktails.");
+    const quote = createQuote('“I feel bad for people who don’t drink. When they wake up in the morning, that’s as good as they’re going to feel all day.” – Frank Sinatra');
 
     homeContainer.innerHTML = '';
-    outterContainer.classList.remove("background-mask");
+    homeContainer.classList.remove("backdrop");
     homeContainer.appendChild(description);
     homeContainer.appendChild(quote);
 }
